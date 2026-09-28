@@ -163,22 +163,22 @@
       letter-spacing: 0.5px;
     }
     .anno-solar {
-      top: 46%;
-      left: 52%;
+      top: 48%;
+      left: 51%;
       width: 17%;
-      height: 7%;
+      height: 9%;
       border: 2px dashed #ef4444;
-      background: rgba(239, 68, 68, 0.25);
+      background: rgba(239, 68, 68, 0.3);
       color: #fff;
       text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     }
     .anno-keybox {
-      top: 52.5%;
-      left: 75%;
-      width: 13%;
-      height: 7%;
+      top: 50%;
+      left: 73%;
+      width: 15%;
+      height: 10%;
       border: 3px solid #22c55e;
-      background: rgba(34, 197, 94, 0.25);
+      background: rgba(34, 197, 94, 0.3);
       color: #fff;
       box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
       animation: pulse 1.6s infinite;
@@ -407,13 +407,6 @@
       font-weight: 600;
       text-align: center;
     }
-    .pinpoint-box {
-      position: absolute;
-      border: 3px solid #22c55e;
-      border-radius: 6px;
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
-      animation: pulse 1.8s infinite;
-    }
     @keyframes pulse {
       0% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.08); opacity: 0.7; }
@@ -423,425 +416,481 @@
 </head>
 <body>
 
-  <!-- Language Selection Modal (Opens automatically on launch) -->
+  <!-- Language Selection Modal -->
   <div id="langModal" class="modal-overlay">
     <div class="modal-card">
-      <img src="data:image/png;base64,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(synth.length - 1));
-                    synth.removeNode(this);
-                }
-            }
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Ivy Central Logo" class="modal-logo" id="modalLogoImg">
+      <h2>Welcome / Benvenuto</h2>
+      <p>Select your preferred language<br>Scegli la tua lingua</p>
+      <div class="lang-grid">
+        <div class="lang-tile" onclick="setLanguage('it')">
+          <div class="lang-flag">🇮🇹</div>
+          <div class="lang-name">Italiano</div>
+        </div>
+        <div class="lang-tile" onclick="setLanguage('en')">
+          <div class="lang-flag">🇬🇧</div>
+          <div class="lang-name">English</div>
+        </div>
+        <div class="lang-tile" onclick="setLanguage('es')">
+          <div class="lang-flag">🇪🇸</div>
+          <div class="lang-name">Español</div>
+        </div>
+        <div class="lang-tile" onclick="setLanguage('fr')">
+          <div class="lang-flag">🇫🇷</div>
+          <div class="lang-name">Français</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            class Synth {
-                constructor() {
-                    this.nodes = [];
-                }
-                play(type, freq, time, dur) {
-                    this.nodes.push(new SynthNode(type, freq, time, dur));
-                }
-                removeNode(node) {
-                    this.nodes = this.nodes.filter(n => n !== node);
-                }
-                trigger(seq, time) {
-                    seq.forEach((note, idx) => {
-                        if (note) {
-                            this.play('triangle', noteToFreq(note), time + idx * 0.15, 0.1);
-                            this.play('sine', noteToFreq(note)*0.5, time + idx * 0.15, 0.1);
-                        }
-                    });
-                }
-            }
+  <!-- Complete Confirmation Modal -->
+  <div id="completeModal" class="modal-overlay hidden">
+    <div class="modal-card" style="max-width: 320px; padding: 24px 20px;">
+      <div style="font-size: 40px; margin-bottom: 8px;">🎉</div>
+      <h2 id="completeTitle" style="font-size: 18px; margin-bottom: 6px;">Check-in Complete! 🎉</h2>
+      <p id="completeDesc" style="font-size: 13px; margin-bottom: 18px; color: var(--text-muted);">
+        You are all set. Come inside and enjoy your stay at Ivy Central Apartment!
+      </p>
+      <button class="btn btn-next" style="width: 100%; border-radius: 12px; padding: 12px;" onclick="closeSuccessModal()">
+        OK
+      </button>
+    </div>
+  </div>
 
-            const synth = new Synth();
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Ivy Central Logo" class="brand-logo" id="headerLogoImg">
+        <div class="brand-text">
+          <h1>IVY CENTRAL</h1>
+          <p id="headerSubtitle">Self Check-in Guide</p>
+        </div>
+      </div>
+      <button class="lang-btn-current" onclick="openLangModal()">
+        <span id="currentLangFlag">🇮🇹</span>
+        <span id="currentLangCode">IT</span>
+      </button>
+    </header>
 
-            function noteToFreq(note) {
-                const notes = { 'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11 };
-                let match = note.match(/([A-G])([#b])?([0-9])/);
-                if(!match) return 440;
-                let semitone = notes[match[1]];
-                if (match[2] === '#') semitone++;
-                if (match[2] === 'b') semitone--;
-                let octave = parseInt(match[3]);
-                return 440 * Math.pow(2, (semitone - 9 + (octave - 4) * 12) / 12);
-            }
+    <!-- Progress Tracker -->
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
 
-            // --- JELLYFISH CREATURE ---
-            class Jellyfish {
-                constructor(x, y) {
-                    this.x = x;
-                    this.y = y;
-                    this.vx = (Math.random() - 0.5) * 1.5;
-                    this.vy = (Math.random() - 0.5) * 1.5 - 0.5;
-                    this.size = 30 + Math.random() * 40;
-                    this.color = Math.random() < 0.2 ? '#ff77aa' : (Math.random() < 0.5 ? '#77ffcc' : '#77ccff');
-                    this.pulse = Math.random() * Math.PI * 2;
-                    this.tentacles = [];
-                    for (let i = 0; i < 6; i++) {
-                        this.tentacles.push({
-                            length: 50 + Math.random() * 80,
-                            offset: i * 0.5
-                        });
-                    }
-                    this.dead = false;
-                }
-                update() {
-                    this.pulse += 0.05;
-                    let currentSize = this.size + Math.sin(this.pulse) * 5;
-                    
-                    this.x += this.vx + Math.sin(this.pulse * 0.5) * 0.5;
-                    this.y += this.vy;
-                    
-                    // buoyancy
-                    this.vy -= 0.02;
-                    if(this.vy < -1.5) this.vy = -1.5;
+    <!-- Step Container -->
+    <main class="step-content">
+      <div class="step-badge" id="stepBadge">
+        <span>📍</span> <span id="stepBadgeText">Passo 1 di 5</span>
+      </div>
 
-                    // Boundaries
-                    if (this.x < 50 || this.x > width - 50) this.vx *= -1;
-                    if (this.y < 50) this.vy = 1;
+      <h2 class="step-title" id="stepTitle">Titolo del Passo</h2>
+      <p class="step-desc" id="stepDesc">Descrizione dettagliata delle azioni da svolgere per questo passaggio.</p>
 
-                    // Collide with net
-                    if (net.active && gameState === 'play') {
-                        let d = Math.hypot(this.x - net.x, this.y - net.y);
-                        if (d < net.radius + currentSize*0.5) {
-                            // Caught!
-                            score += Math.floor(this.size);
-                            playSound('catch');
-                            synth.trigger(['C5', 'E5', 'G5'], ctx.currentTime);
-                            particles.push(new ScorePopup(this.x, this.y, `+${Math.floor(this.size)}`));
-                            for(let i=0; i<15; i++) particles.push(new Bubble(this.x, this.y, this.color));
-                            this.dead = true;
-                        }
-                    }
-                }
-                draw() {
-                    ctx.save();
-                    ctx.translate(this.x, this.y);
-                    let currentSize = this.size + Math.sin(this.pulse) * 5;
+      <!-- Dynamic Visual Element Container -->
+      <div id="stepVisual"></div>
 
-                    // Draw Tentacles
-                    ctx.strokeStyle = this.color;
-                    ctx.lineWidth = 2;
-                    this.tentacles.forEach((t, idx) => {
-                        ctx.beginPath();
-                        ctx.moveTo((idx - 3) * (currentSize * 0.2), currentSize * 0.3);
-                        let segments = 5;
-                        for(let s = 1; s <= segments; s++) {
-                            let sy = (currentSize * 0.3) + (t.length / segments) * s;
-                            let sx = (idx - 3) * (currentSize * 0.2) + Math.sin(this.pulse * 2 + t.offset + s) * 15;
-                            ctx.lineTo(sx, sy);
-                        }
-                        ctx.stroke();
-                    });
+      <!-- Warning/Info Alert -->
+      <div id="stepAlert"></div>
 
-                    // Draw Bell
-                    ctx.fillStyle = this.color;
-                    ctx.globalAlpha = 0.6;
-                    ctx.beginPath();
-                    ctx.arc(0, 0, currentSize, Math.PI, 0, false);
-                    ctx.lineTo(currentSize, currentSize * 0.3);
-                    // wavy bottom
-                    ctx.quadraticCurveTo(0, currentSize * 0.4, -currentSize, currentSize * 0.3);
-                    ctx.closePath();
-                    ctx.fill();
-                    ctx.strokeStyle = '#ffffff';
-                    ctx.lineWidth = 1.5;
-                    ctx.stroke();
+      <!-- Navigation Footer -->
+      <div class="nav-actions">
+        <button class="btn btn-prev" id="btnPrev" onclick="navigateStep(-1)">
+          <span>←</span>
+        </button>
+        <button class="btn btn-next" id="btnNext" onclick="navigateStep(1)">
+          <span id="btnNextText">Avanti</span> <span>→</span>
+        </button>
+      </div>
+    </main>
+  </div>
 
-                    // Inner glow
-                    let grad = ctx.createRadialGradient(0, -currentSize*0.2, 2, 0, 0, currentSize);
-                    grad.addColorStop(0, '#ffffff');
-                    grad.addColorStop(1, 'transparent');
-                    ctx.fillStyle = grad;
-                    ctx.globalAlpha = 0.4;
-                    ctx.fill();
+  <script>
+    const translations = {
+      it: {
+        flag: "🇮🇹",
+        code: "IT",
+        subtitle: "Guida Self Check-in",
+        badgePrefix: "Passo",
+        badgeOf: "di",
+        btnNext: "Avanti",
+        btnPrev: "Indietro",
+        btnComplete: "Ho fatto, benvenuto! 🏠",
+        btnShowCode: "Mostra codice",
+        btnHideCode: "Nascondi codice",
+        codeTitle: "Codice cassetta di sicurezza",
+        whatsappText: "Ciao! Posso chiederti un aiuto? Sono il vostro ospite.",
+        steps: [
+          {
+            title: "Trova la cassetta corretta",
+            desc: "Guarda la parete a destra del portone d'ingresso. La cassettina si trova subito accanto alla targa.",
+            alertType: "danger",
+            alertText: "ATTENZIONE: NON toccare o tirare la piccola luce solare sopra la targa! È solo una lampada di cortesia, non la cassetta chiavi.",
+            visualType: "image_both"
+          },
+          {
+            title: "Apri lo sportello protettivo",
+            desc: "Sulla cassettina, fai scorrere con il pollice verso il basso lo sportellino nero in plastica per scoprire le 4 rotelle con i numeri.",
+            alertType: "info",
+            alertText: "Scorrendo il coperchio nero troverai i rulli numerici e la levetta di apertura.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Allinea il codice a 4 cifre",
+            desc: "Ruota le rotelle fino a comporre esattamente il codice assegnato in corrispondenza della linea di riferimento orizzontale.",
+            alertType: "info",
+            alertText: "Assicurati che ciascuna delle 4 cifre sia perfettamente centrata.",
+            visualType: "code_display"
+          },
+          {
+            title: "Premi la levetta e apri",
+            desc: "Mantenendo il codice allineato, spingi verso il basso la piccola levetta nera accanto ai numeri e tira lo sportello verso di te per prendere le chiavi.",
+            alertType: "info",
+            alertText: "Nel mazzo trovi sia la chiave del portone principale sia quella del tuo appartamento.",
+            visualType: "image_lever"
+          },
+          {
+            title: "Richiudi e scombina i numeri",
+            desc: "Richiudi bene lo sportello in metallo. Gira i rulli a caso per sicurezza e risolleva lo sportellino nero di protezione.",
+            alertType: "info",
+            alertText: "Sei pronto per entrare! Benvenuto a Ivy Central Apartment.",
+            visualType: "final_whatsapp"
+          }
+        ]
+      },
+      en: {
+        flag: "🇬🇧",
+        code: "EN",
+        subtitle: "Self Check-in Guide",
+        badgePrefix: "Step",
+        badgeOf: "of",
+        btnNext: "Next",
+        btnPrev: "Back",
+        btnComplete: "Done, welcome home! 🏠",
+        btnShowCode: "Reveal code",
+        btnHideCode: "Hide code",
+        codeTitle: "Key Safe Box Code",
+        whatsappText: "Hello! Can you help me? I am your guest.",
+        steps: [
+          {
+            title: "Find the correct lockbox",
+            desc: "Look at the wall to the right of the main entrance. The key box is located right next to the sign.",
+            alertType: "danger",
+            alertText: "CAUTION: DO NOT touch or pull the small solar light above the sign! It's just a courtesy light, not the key box.",
+            visualType: "image_both"
+          },
+          {
+            title: "Open the protective cover",
+            desc: "Slide down the black plastic cover with your thumb to reveal the 4 number dials.",
+            alertType: "info",
+            alertText: "Sliding down the black lid will expose the numeric dials and opening lever.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Align the 4-digit code",
+            desc: "Rotate the dials until your exact assigned code aligns with the central horizontal reference line.",
+            alertType: "info",
+            alertText: "Make sure each of the 4 digits is perfectly centered.",
+            visualType: "code_display"
+          },
+          {
+            title: "Press the lever and open",
+            desc: "Keeping the code aligned, push down the small black lever next to the numbers and pull the door towards you to retrieve the keys.",
+            alertType: "info",
+            alertText: "The key ring includes both the main gate key and your apartment key.",
+            visualType: "image_lever"
+          },
+          {
+            title: "Close and scramble numbers",
+            desc: "Firmly close the metal door. Scramble the dials randomly for security and pull back up the black protective cover.",
+            alertType: "info",
+            alertText: "You are ready to enter! Welcome to Ivy Central Apartment.",
+            visualType: "final_whatsapp"
+          }
+        ]
+      },
+      es: {
+        flag: "🇪🇸",
+        code: "ES",
+        subtitle: "Guía de Self Check-in",
+        badgePrefix: "Paso",
+        badgeOf: "de",
+        btnNext: "Siguiente",
+        btnPrev: "Atrás",
+        btnComplete: "¡Listo, bienvenidos! 🏠",
+        btnShowCode: "Mostrar código",
+        btnHideCode: "Ocultar código",
+        codeTitle: "Código de la caja de llaves",
+        whatsappText: "¡Hola! ¿Me puedes ayudar? Soy vuestro huésped.",
+        steps: [
+          {
+            title: "Encuentra la caja correcta",
+            desc: "Mira la pared a la derecha de la puerta principal. La caja de llaves está justo al lado del cartel.",
+            alertType: "danger",
+            alertText: "ATENCIÓN: ¡NO toques ni tires de la pequeña luz solar situada encima del cartel! Es solo una lámpara de cortesía, no la caja de llaves.",
+            visualType: "image_both"
+          },
+          {
+            title: "Abre la tapa protectora",
+            desc: "Desliza hacia abajo con el pulgar la tapa negra de plástico para descubrir las 4 ruedas numéricas.",
+            alertType: "info",
+            alertText: "Al deslizar la tapa negra encontrarás los diales numéricos y la palanca de apertura.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Alinea el código de 4 dígitos",
+            desc: "Gira las ruedas hasta componer exactamente tu código asignado en correspondencia con la línea de referencia horizontal.",
+            alertType: "info",
+            alertText: "Asegúrate de que cada uno de los 4 dígitos esté perfectamente centrado.",
+            visualType: "code_display"
+          },
+          {
+            title: "Pulsa la palanca y abre",
+            desc: "Manteniendo el código alineado, empuja hacia abajo la pequeña palanca negra junto a los números y tira de la puerta hacia ti.",
+            alertType: "info",
+            alertText: "En el llavero encontrarás tanto la llave de la puerta principal como la de tu apartamento.",
+            visualType: "image_lever"
+          },
+          {
+            title: "Cierra y desordena los números",
+            desc: "Cierra bien la puerta metálica. Gira los rodillos al azar por seguridad y vuelve a subir la tapa protectora negra.",
+            alertType: "info",
+            alertText: "¡Estás listo para entrar! Bienvenido a Ivy Central Apartment.",
+            visualType: "final_whatsapp"
+          }
+        ]
+      },
+      fr: {
+        flag: "🇫🇷",
+        code: "FR",
+        subtitle: "Guide de Self Check-in",
+        badgePrefix: "Étape",
+        badgeOf: "sur",
+        btnNext: "Suivant",
+        btnPrev: "Retour",
+        btnComplete: "Terminé, bienvenue ! 🏠",
+        btnShowCode: "Afficher le code",
+        btnHideCode: "Masquer le code",
+        codeTitle: "Code de la boîte à clés",
+        whatsappText: "Bonjour ! Pouvez-vous m'aider ? Je suis votre invité.",
+        steps: [
+          {
+            title: "Trouvez la bonne boîte à clés",
+            desc: "Regardez le mur à droite de la porte d'entrée. La petite boîte se trouve juste à côté de l'écriteau.",
+            alertType: "danger",
+            alertText: "ATTENTION : NE touchez PAS et ne tirez PAS sur la petite lampe solaire au-dessus de l'écriteau ! C'est juste une veilleuse.",
+            visualType: "image_both"
+          },
+          {
+            title: "Ouvrez le volet de protection",
+            desc: "Faites glisser vers le bas avec votre pouce le clapet en plastique noir pour découvrir les 4 molettes chiffrées.",
+            alertType: "info",
+            alertText: "En glissant le couvercle noir, vous trouverez les molettes numériques et le levier d'ouverture.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Alignez le code à 4 chiffres",
+            desc: "Tournez les molettes pour composer exactement votre code attribué en face de la ligne de référence horizontale.",
+            alertType: "info",
+            alertText: "Assurez-vous que chacun des 4 chiffres est parfaitement centré.",
+            visualType: "code_display"
+          },
+          {
+            title: "Appuyez sur le levier et ouvrez",
+            desc: "En gardant le code aligné, poussez vers le bas le petit levier noir à côté des chiffres et tirez la porte vers vous.",
+            alertType: "info",
+            alertText: "Le trousseau contient à la fois la clé de la porte principale et celle de votre appartement.",
+            visualType: "image_lever"
+          },
+          {
+            title: "Refermez et brouillez les chiffres",
+            desc: "Refermez bien la porte métallique. Tournez les rouleaux au hasard par sécurité et remontez le volet de protection noir.",
+            alertType: "info",
+            alertText: "Vous êtes prêt à entrer ! Bienvenue à Ivy Central Apartment.",
+            visualType: "final_whatsapp"
+          }
+        ]
+      }
+    };
 
-                    ctx.restore();
-                }
-            }
+    let currentLanguage = 'it';
+    let currentStep = 0;
+    let isCodeRevealed = false;
+    let dynamicKeycode = "••••";
 
-            // --- PARTICLES & EFFECTS ---
-            class Bubble {
-                constructor(x, y, color = 'rgba(255,255,255,0.6)') {
-                    this.x = x;
-                    this.y = y;
-                    this.vx = (Math.random() - 0.5) * 1;
-                    this.vy = -Math.random() * 2 - 1;
-                    this.radius = Math.random() * 6 + 2;
-                    this.color = color;
-                    this.alpha = 1;
-                    this.dead = false;
-                }
-                update() {
-                    this.x += this.vx + Math.sin(this.y * 0.05) * 0.5;
-                    this.y += this.vy;
-                    this.alpha -= 0.005;
-                    if (this.alpha <= 0 || this.y < 0) this.dead = true;
-                }
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = Math.max(0, this.alpha);
-                    ctx.strokeStyle = this.color;
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.stroke();
-                    ctx.fillStyle = 'rgba(255,255,255,0.2)';
-                    ctx.fill();
-                    ctx.restore();
-                }
-            }
+    function parseUrlCode() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const codeParam = urlParams.get('code');
+      if (codeParam && codeParam.trim().length > 0) {
+        dynamicKeycode = codeParam.trim();
+      }
+    }
 
-            class ScorePopup {
-                constructor(x, y, text) {
-                    this.x = x;
-                    this.y = y;
-                    this.text = text;
-                    this.alpha = 1;
-                    this.vy = -1;
-                    this.dead = false;
-                }
-                update() {
-                    this.y += this.vy;
-                    this.alpha -= 0.02;
-                    if(this.alpha <= 0) this.dead = true;
-                }
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = Math.max(0, this.alpha);
-                    ctx.fillStyle = '#ffff55';
-                    ctx.font = 'bold 20px sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.fillText(this.text, this.x, this.y);
-                    ctx.restore();
-                }
-            }
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      document.getElementById('langModal').classList.add('hidden');
+      updateUi();
+    }
 
-            // --- NET / PLAYER ---
-            const net = {
-                x: width / 2,
-                y: height / 2,
-                radius: 40,
-                active: false,
-                alpha: 0
-            };
+    function openLangModal() {
+      document.getElementById('langModal').classList.remove('hidden');
+    }
 
-            // --- GAME VARIABLES ---
-            let jellies = [];
-            let particles = [];
-            let score = 0;
-            let timeRemaining = 60;
-            let gameState = 'title'; // 'title', 'play', 'gameover'
-            let spawnTimer = 0;
-            let lastTime = 0;
-            let timerInterval = null;
+    function toggleCodeReveal() {
+      isCodeRevealed = !isCodeRevealed;
+      updateVisualContent();
+    }
 
-            // --- INPUT HANDLING ---
-            function handlePointerMove(e) {
-                const rect = canvas.getBoundingClientRect();
-                net.x = e.clientX - rect.left;
-                net.y = e.clientY - rect.top;
-            }
+    function navigateStep(direction) {
+      if (direction === 1 && currentStep === 4) {
+        document.getElementById('completeModal').classList.remove('hidden');
+        return;
+      }
+      const newStep = currentStep + direction;
+      if (newStep >= 0 && newStep <= 4) {
+        currentStep = newStep;
+        updateUi();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
 
-            function handlePointerDown(e) {
-                if (gameState === 'play') {
-                    net.active = true;
-                    net.alpha = 1;
-                    playSound('net');
-                    synth.trigger(['A4', 'C5'], ctx.currentTime);
-                    for(let i=0; i<8; i++) {
-                        particles.push(new Bubble(net.x, net.y, '#77ffff'));
-                    }
-                } else if (gameState === 'title') {
-                    startGame();
-                } else if (gameState === 'gameover') {
-                    gameState = 'title';
-                }
-            }
+    function closeSuccessModal() {
+      document.getElementById('completeModal').classList.add('hidden');
+      
+      const targetUrl = 'about:blank';
+      window.open(targetUrl, '_blank');
 
-            function handlePointerUp(e) {
-                net.active = false;
-            }
+      try {
+        window.close();
+      } catch (e) {}
 
-            window.addEventListener('mousemove', handlePointerMove);
-            window.addEventListener('mousedown', handlePointerDown);
-            window.addEventListener('mouseup', handlePointerUp);
+      document.querySelector('.app-container').innerHTML = `
+        <div style="padding: 40px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
+          <div style="font-size: 64px; margin-bottom: 20px;">✨ 🏠 ✨</div>
+          <h1 style="color: var(--primary); font-size: 24px; font-weight: 800; margin-bottom: 12px;">Ivy Central Apartment</h1>
+          <p style="color: #64748b; font-size: 16px; line-height: 1.5; margin-bottom: 28px;">
+            Check-in completato!<br>Ti auguriamo un piacevole soggiorno.
+          </p>
+          <button class="btn btn-next" style="width: auto; padding: 12px 28px;" onclick="window.close()">
+            Chiudi finestra
+          </button>
+        </div>
+      `;
+    }
 
-            window.addEventListener('touchmove', (e) => {
-                if(e.touches.length > 0) handlePointerMove(e.touches[0]);
-            }, {passive: true});
-            window.addEventListener('touchstart', (e) => {
-                if(e.touches.length > 0) handlePointerDown(e.touches[0]);
-            }, {passive: true});
-            window.addEventListener('touchend', handlePointerUp);
+    function updateUi() {
+      const data = translations[currentLanguage];
+      const step = data.steps[currentStep];
 
+      document.getElementById('currentLangFlag').textContent = data.flag;
+      document.getElementById('currentLangCode').textContent = data.code;
+      document.getElementById('headerSubtitle').textContent = data.subtitle;
 
-            // --- GAME FLOW ---
-            function startGame() {
-                score = 0;
-                timeRemaining = 60;
-                jellies = [];
-                particles = [];
-                gameState = 'play';
-                
-                // Initial spawn
-                for(let i=0; i<5; i++) {
-                    jellies.push(new Jellyfish(Math.random()*(width-100)+50, Math.random()*(height-200)+150));
-                }
+      const progressPercent = ((currentStep + 1) / 5) * 100;
+      document.getElementById('progressBar').style.width = progressPercent + '%';
 
-                if(timerInterval) clearInterval(timerInterval);
-                timerInterval = setInterval(() => {
-                    if(gameState === 'play') {
-                        timeRemaining--;
-                        if(timeRemaining <= 0) {
-                            gameOver();
-                        }
-                    }
-                }, 1000);
-            }
+      document.getElementById('stepBadgeText').textContent = `${data.badgePrefix} ${currentStep + 1} ${data.badgeOf} 5`;
+      document.getElementById('stepTitle').textContent = step.title;
+      document.getElementById('stepDesc').textContent = step.desc;
 
-            function gameOver() {
-                gameState = 'gameover';
-                clearInterval(timerInterval);
-                playSound('gameover');
-            }
+      const prevBtn = document.getElementById('btnPrev');
+      if (currentStep === 0) {
+        prevBtn.style.display = 'none';
+      } else {
+        prevBtn.style.display = 'flex';
+      }
 
+      const nextBtnText = document.getElementById('btnNextText');
+      if (currentStep === 4) {
+        nextBtnText.textContent = data.btnComplete;
+      } else {
+        nextBtnText.textContent = data.btnNext;
+      }
 
-            // --- MAIN LOOP ---
-            function loop(timestamp) {
-                let dt = timestamp - lastTime;
-                lastTime = timestamp;
+      updateVisualContent();
+      updateAlertContent(step);
+    }
 
-                // Update
-                if (gameState === 'play') {
-                    spawnTimer++;
-                    if (spawnTimer > 40 && jellies.length < 15) {
-                        jellies.push(new Jellyfish(Math.random() * (width - 100) + 50, height + 50));
-                        spawnTimer = 0;
-                    }
+    function updateVisualContent() {
+      const data = translations[currentLanguage];
+      const step = data.steps[currentStep];
+      const container = document.getElementById('stepVisual');
+      container.innerHTML = '';
 
-                    // Ambient bubbles
-                    if(Math.random() < 0.2) {
-                        particles.push(new Bubble(Math.random() * width, height + 10));
-                    }
+      if (step.visualType === 'image_both') {
+        container.innerHTML = `
+          <div class="visual-box">
+            <img src="IMG-20260928-WA0010(1).jpg" alt="Ingresso Principale">
+            <div class="step-img-overlay">Parete a destra del portone</div>
+          </div>
+          <div class="visual-box" style="position: relative;">
+            <img src="IMG-20260928-WA0012.jpg" alt="Dettaglio Targa e Cassetta">
+            <div class="annotation-box anno-solar">❌ LUCE</div>
+            <div class="annotation-box anno-keybox">✓ CHIAVI</div>
+            <div class="step-img-overlay">Dettaglio: Targa Ivy (sx) | Cassetta Chiavi (dx)</div>
+          </div>
+        `;
+      } else if (step.visualType === 'image_slider') {
+        container.innerHTML = `
+          <div class="visual-box" style="background: #1e293b; padding: 30px; text-align: center; border-radius: 14px; margin-bottom: 16px;">
+            <div style="font-size: 56px; margin-bottom: 10px;">📦⬇️</div>
+            <div style="color: #ffffff; font-size: 15px; font-weight: 700;">Fai scorrere lo sportellino verso il basso</div>
+          </div>
+        `;
+      } else if (step.visualType === 'code_display') {
+        container.innerHTML = `
+          <div class="code-display-card">
+            <div class="code-label">${data.codeTitle}</div>
+            <div class="code-value ${isCodeRevealed ? 'code-revealed' : 'code-blurred'}" id="passcodeText">
+              ${dynamicKeycode}
+            </div>
+            <button class="toggle-code-btn" onclick="toggleCodeReveal()">
+              <span>${isCodeRevealed ? '🔒' : '👁️'}</span>
+              <span>${isCodeRevealed ? data.btnHideCode : data.btnShowCode}</span>
+            </button>
+          </div>
+        `;
+      } else if (step.visualType === 'image_lever') {
+        container.innerHTML = `
+          <div class="visual-box" style="background: #1e293b; padding: 30px; text-align: center; border-radius: 14px; margin-bottom: 16px;">
+            <div style="font-size: 56px; margin-bottom: 10px;">🔑⬇️</div>
+            <div style="color: #ffffff; font-size: 15px; font-weight: 700;">Premi la levetta verso il basso e apri lo sportello</div>
+          </div>
+        `;
+      } else if (step.visualType === 'final_whatsapp') {
+        const encodedMsg = encodeURIComponent(data.whatsappText);
+        container.innerHTML = `
+          <div class="whatsapp-card">
+            <div style="font-size: 36px; margin-bottom: 6px;">🛎️</div>
+            <h3 style="color: #166534; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Assistenza Host 24/7</h3>
+            <p style="color: #15803d; font-size: 13px;">Hai bisogno di aiuto o supporto per l'accesso?</p>
+            <a href="https://wa.me/393451554077?text=${encodedMsg}" target="_blank" class="whatsapp-btn">
+              <span>💬</span> Scrivici su WhatsApp (+39 345 155 4077)
+            </a>
+          </div>
+        `;
+      }
+    }
 
-                    jellies.forEach(j => j.update());
-                    jellies = jellies.filter(j => !j.dead);
+    function updateAlertContent(step) {
+      const alertContainer = document.getElementById('stepAlert');
+      alertContainer.innerHTML = '';
 
-                    if(net.active) {
-                        net.alpha = Math.min(1, net.alpha + 0.1);
-                    } else {
-                        net.alpha = Math.max(0, net.alpha - 0.05);
-                    }
-                }
+      if (step.alertText) {
+        const isDanger = step.alertType === 'danger';
+        alertContainer.innerHTML = `
+          <div class="alert-box ${isDanger ? 'alert-danger' : 'alert-info'}">
+            <span class="alert-icon">${isDanger ? '⚠️' : '💡'}</span>
+            <span>${step.alertText}</span>
+          </div>
+        `;
+      }
+    }
 
-                particles.forEach(p => p.update());
-                particles = particles.filter(p => !p.dead);
-
-
-                // Draw Background (Deep Ocean Gradient)
-                let grad = ctx.createLinearGradient(0, 0, 0, height);
-                grad.addColorStop(0, '#020b1c');
-                grad.addColorStop(0.5, '#052247');
-                grad.addColorStop(1, '#083c6f');
-                ctx.fillStyle = grad;
-                ctx.fillRect(0, 0, width, height);
-
-                // Draw rays of light from surface
-                ctx.save();
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
-                ctx.beginPath();
-                ctx.moveTo(width * 0.2, 0);
-                ctx.lineTo(width * 0.1, height);
-                ctx.lineTo(width * 0.3, height);
-                ctx.lineTo(width * 0.5, 0);
-                ctx.fill();
-
-                ctx.beginPath();
-                ctx.moveTo(width * 0.7, 0);
-                ctx.lineTo(width * 0.6, height);
-                ctx.lineTo(width * 0.8, height);
-                ctx.lineTo(width * 0.9, 0);
-                ctx.fill();
-                ctx.restore();
-
-
-                // Draw Entities
-                particles.forEach(p => p.draw());
-                jellies.forEach(j => j.draw());
-
-                // Draw Net / Cursor interaction
-                if (gameState === 'play' && net.alpha > 0) {
-                    ctx.save();
-                    ctx.translate(net.x, net.y);
-                    ctx.globalAlpha = net.alpha * 0.7;
-                    ctx.strokeStyle = '#77ffff';
-                    ctx.fillStyle = 'rgba(119, 255, 255, 0.15)';
-                    ctx.lineWidth = 3;
-                    ctx.beginPath();
-                    // Draw glowing net ring
-                    ctx.arc(0, 0, net.radius, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.stroke();
-
-                    // Net mesh pattern inside
-                    ctx.beginPath();
-                    ctx.moveTo(-net.radius*0.7, 0); ctx.lineTo(net.radius*0.7, 0);
-                    ctx.moveTo(0, -net.radius*0.7); ctx.lineTo(0, net.radius*0.7);
-                    ctx.lineWidth = 1;
-                    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
-                    ctx.stroke();
-
-                    ctx.restore();
-                }
-
-                // Draw UI / HUD
-                if (gameState === 'play') {
-                    ctx.fillStyle = '#ffffff';
-                    ctx.font = 'bold 24px sans-serif';
-                    ctx.textAlign = 'left';
-                    ctx.fillText(`Score: ${score}`, 20, 40);
-
-                    ctx.textAlign = 'right';
-                    ctx.fillText(`Time: ${timeRemaining}s`, width - 20, 40);
-                } else if (gameState === 'title') {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
-                    ctx.fillRect(0, 0, width, height);
-
-                    ctx.fillStyle = '#77ffff';
-                    ctx.font = 'bold 48px sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.fillText('JELLYFISH DANCE', width / 2, height / 2 - 50);
-
-                    ctx.fillStyle = '#ffffff';
-                    ctx.font = '20px sans-serif';
-                    ctx.fillText('Catch the glowing jellies with your net!', width / 2, height / 2);
-
-                    ctx.fillStyle = '#ff77aa';
-                    ctx.font = 'bold 22px sans-serif';
-                    ctx.fillText('Click or Tap anywhere to Start', width / 2, height / 2 + 60);
-                } else if (gameState === 'gameover') {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
-                    ctx.fillRect(0, 0, width, height);
-
-                    ctx.fillStyle = '#ff77aa';
-                    ctx.font = 'bold 48px sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.fillText('TIME UP!', width / 2, height / 2 - 60);
-
-                    ctx.fillStyle = '#ffffff';
-                    ctx.font = '28px sans-serif';
-                    ctx.fillText(`Final Score: ${score}`, width / 2, height / 2);
-
-                    ctx.fillStyle = '#77ffff';
-                    ctx.font = 'bold 20px sans-serif';
-                    ctx.fillText('Click to Play Again', width / 2, height / 2 + 60);
-                }
-
-                requestAnimationFrame(loop);
-            }
-
-            requestAnimationFrame(loop);
-
-        </script>
-    </body>
-    </html>
-    ```
+    window.addEventListener('DOMContentLoaded', () => {
+      parseUrlCode();
+      updateUi();
+    });
+  </script>
+</body>
+</html>
