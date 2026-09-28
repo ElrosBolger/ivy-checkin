@@ -163,20 +163,20 @@
       letter-spacing: 0.5px;
     }
     .anno-solar {
-      top: 46%;
-      left: 52%;
+      top: 55%;
+      left: 55%;
       width: 17%;
-      height: 7%;
+      height: 10%;
       border: 2px dashed #ef4444;
       background: rgba(239, 68, 68, 0.25);
       color: #fff;
       text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     }
     .anno-keybox {
-      top: 52.5%;
-      left: 75%;
-      width: 13%;
-      height: 7%;
+      top: 57%;
+      left: 77%;
+      width: 15%;
+      height: 11%;
       border: 3px solid #22c55e;
       background: rgba(34, 197, 94, 0.25);
       color: #fff;
@@ -407,13 +407,6 @@
       font-weight: 600;
       text-align: center;
     }
-    .pinpoint-box {
-      position: absolute;
-      border: 3px solid #22c55e;
-      border-radius: 6px;
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
-      animation: pulse 1.8s infinite;
-    }
     @keyframes pulse {
       0% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.08); opacity: 0.7; }
@@ -423,7 +416,7 @@
 </head>
 <body>
 
-  <!-- Language Selection Modal (Opens automatically on launch) -->
+  <!-- Language Selection Modal -->
   <div id="langModal" class="modal-overlay">
     <div class="modal-card">
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Ivy Central Logo" class="modal-logo" id="modalLogoImg">
@@ -526,6 +519,7 @@
         btnShowCode: "Mostra codice",
         btnHideCode: "Nascondi codice",
         codeTitle: "Codice cassetta di sicurezza",
+        whatsappText: "Ciao! Posso chiederti un aiuto? Sono il vostro ospite.",
         steps: [
           {
             title: "Raggiungi l'ingresso",
@@ -545,12 +539,12 @@
             title: "Imposta il codice e prendi le chiavi",
             desc: "Inserisci la combinazione a 4 cifre allineando i numeri con la linea centrale, poi premi la levetta verso il basso per aprire lo sportellino ed estrarre le chiavi.",
             alertType: "info",
-            alertText: "Dopo apostrofo preso il mazzo di chiavi, richiudi accuratamente lo sportellino della cassetta.",
+            alertText: "Dopo aver preso il mazzo di chiavi, richiudi accuratamente lo sportellino della cassetta.",
             visualType: "code_display"
           },
           {
             title: "Richiudi e scombina i numeri",
-            desc: "È fondamentale richiudere bene lo sportellino della cassetta e girare le rotelle a caso per nascondere il codice a chiunque passi.",
+            desc: "È fondamentale richiudere bene lo sportellino della cassetta e girare les rotelle a caso per nascondere il codice a chiunque passi.",
             alertType: "danger",
             alertText: "IMPORTANTE: Scombina sempre tutti e 4 i numeri prima di salire per la sicurezza della casa!",
             visualType: "scramble_notice"
@@ -576,6 +570,7 @@
         btnShowCode: "Reveal code",
         btnHideCode: "Hide code",
         codeTitle: "Key Safe Box Code",
+        whatsappText: "Hello! Can you help me? I am your guest.",
         steps: [
           {
             title: "Reach the entrance",
@@ -626,6 +621,7 @@
         btnShowCode: "Mostrar código",
         btnHideCode: "Ocultar código",
         codeTitle: "Código de la caja de llaves",
+        whatsappText: "¡Hola! ¿Me puedes ayudar? Soy vuestro huésped.",
         steps: [
           {
             title: "Llegada a la entrada",
@@ -676,6 +672,7 @@
         btnShowCode: "Afficher le code",
         btnHideCode: "Masquer le code",
         codeTitle: "Code de la boîte à clés",
+        whatsappText: "Bonjour ! Pouvez-vous m'aider ? Je suis votre invité.",
         steps: [
           {
             title: "Arrivée devant l'entrée",
@@ -823,14 +820,14 @@
       if (step.visualType === 'image1') {
         container.innerHTML = `
           <div class="visual-box">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Ingresso">
+            <img src="IMG-20260928-WA0010(1).jpg" alt="Ingresso">
             <div class="step-img-overlay">Via Regina Margherita - Ingresso Principale</div>
           </div>
         `;
       } else if (step.visualType === 'image2_annotated') {
         container.innerHTML = `
           <div class="visual-box" style="position: relative;">
-            <img src="https://images.unsplash.com/photo-1558036116-158ff829af56?auto=format&fit=crop&w=800&q=80" alt="Cassetta Chiavi">
+            <img src="IMG-20260928-WA0012.jpg" alt="Cassetta Chiavi">
             <div class="annotation-box anno-solar">❌ NO</div>
             <div class="annotation-box anno-keybox">✓ QUI</div>
             <div class="step-img-overlay">Verde = Cassetta portachiavi corretta | Rosso = Faretto solare</div>
@@ -862,12 +859,13 @@
           </div>
         `;
       } else if (step.visualType === 'final_whatsapp') {
+        const encodedMsg = encodeURIComponent(data.whatsappText);
         container.innerHTML = `
           <div class="whatsapp-card">
             <div style="font-size: 36px; margin-bottom: 6px;">🛎️</div>
             <h3 style="color: #166534; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Assistenza Host 24/7</h3>
             <p style="color: #15803d; font-size: 13px;">Hai bisogno di aiuto o supporto per l'accesso?</p>
-            <a href="https://wa.me/393451554077?text=Ciao%20Ivy%20Central,%20ho%20fatto%20l'accesso%20in%20appartamento!" target="_blank" class="whatsapp-btn">
+            <a href="https://wa.me/393451554077?text=${encodedMsg}" target="_blank" class="whatsapp-btn">
               <span>💬</span> Scrivici su WhatsApp (+39 345 155 4077)
             </a>
           </div>
