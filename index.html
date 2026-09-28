@@ -163,22 +163,22 @@
       letter-spacing: 0.5px;
     }
     .anno-solar {
-      top: 55%;
-      left: 55%;
+      top: 48%;
+      left: 51%;
       width: 17%;
-      height: 10%;
+      height: 9%;
       border: 2px dashed #ef4444;
-      background: rgba(239, 68, 68, 0.25);
+      background: rgba(239, 68, 68, 0.3);
       color: #fff;
       text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     }
     .anno-keybox {
-      top: 57%;
-      left: 77%;
+      top: 50%;
+      left: 73%;
       width: 15%;
-      height: 11%;
+      height: 10%;
       border: 3px solid #22c55e;
-      background: rgba(34, 197, 94, 0.25);
+      background: rgba(34, 197, 94, 0.3);
       color: #fff;
       box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
       animation: pulse 1.6s infinite;
@@ -522,38 +522,38 @@
         whatsappText: "Ciao! Posso chiederti un aiuto? Sono il vostro ospite.",
         steps: [
           {
-            title: "Raggiungi l'ingresso",
-            desc: "Benvenuto a Ivy Central Apartment! Dirigiti all'indirizzo comunicato. Riconoscerai l'ingresso dal portone principale.",
-            alertType: "info",
-            alertText: "Se arrivi in orario notturno, l'illuminazione dell'atrio è attiva automaticamente per agevolarti.",
-            visualType: "image1"
-          },
-          {
-            title: "Individua la cassetta portachiavi",
-            desc: "Guarda a destra del portone: in basso sotto il faretto solare rosso troverai la cassetta di sicurezza evidenziata in verde.",
+            title: "Trova la cassetta corretta",
+            desc: "Guarda la parete a destra del portone d'ingresso. La cassettina si trova subito accanto alla targa.",
             alertType: "danger",
-            alertText: "ATTENZIONE: Non toccare la luce solare rossa. Apri solo la cassetta evidenziata in verde con la manopola a combinazione!",
-            visualType: "image2_annotated"
+            alertText: "ATTENZIONE: NON toccare o tirare la piccola luce solare sopra la targa! È solo una lampada di cortesia, non la cassetta chiavi.",
+            visualType: "image_both"
           },
           {
-            title: "Imposta il codice e prendi le chiavi",
-            desc: "Inserisci la combinazione a 4 cifre allineando i numeri con la linea centrale, poi premi la levetta verso il basso per aprire lo sportellino ed estrarre le chiavi.",
+            title: "Apri lo sportello protettivo",
+            desc: "Sulla cassettina, fai scorrere con il pollice verso il basso lo sportellino nero in plastica per scoprire le 4 rotelle con i numeri.",
             alertType: "info",
-            alertText: "Dopo aver preso il mazzo di chiavi, richiudi accuratamente lo sportellino della cassetta.",
+            alertText: "Scorrendo il coperchio nero troverai i rulli numerici e la levetta di apertura.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Allinea il codice a 4 cifre",
+            desc: "Ruota le rotelle fino a comporre esattamente il codice assegnato in corrispondenza della linea di riferimento orizzontale.",
+            alertType: "info",
+            alertText: "Assicurati che ciascuna delle 4 cifre sia perfettamente centrata.",
             visualType: "code_display"
           },
           {
-            title: "Richiudi e scombina i numeri",
-            desc: "È fondamentale richiudere bene lo sportellino della cassetta e girare les rotelle a caso per nascondere il codice a chiunque passi.",
-            alertType: "danger",
-            alertText: "IMPORTANTE: Scombina sempre tutti e 4 i numeri prima di salire per la sicurezza della casa!",
-            visualType: "scramble_notice"
+            title: "Premi la levetta e apri",
+            desc: "Mantenendo il codice allineato, spingi verso il basso la piccola levetta nera accanto ai numeri e tira lo sportello verso di te per prendere le chiavi.",
+            alertType: "info",
+            alertText: "Nel mazzo trovi sia la chiave del portone principale sia quella del tuo appartamento.",
+            visualType: "image_lever"
           },
           {
-            title: "Apri il portone e buon soggiorno!",
-            desc: "Usa la chiave contrassegnata per aprire il portone principale ed entrare. Sei ufficialmente a casa! Se hai qualsiasi dubbio, siamo a tua disposizione.",
+            title: "Richiudi e scombina i numeri",
+            desc: "Richiudi bene lo sportello in metallo. Gira i rulli a caso per sicurezza e risolleva lo sportellino nero di protezione.",
             alertType: "info",
-            alertText: "Il Wi-Fi e le istruzioni dell'appartamento ti aspettano all'interno sul tavolo principale.",
+            alertText: "Sei pronto per entrare! Benvenuto a Ivy Central Apartment.",
             visualType: "final_whatsapp"
           }
         ]
@@ -573,38 +573,38 @@
         whatsappText: "Hello! Can you help me? I am your guest.",
         steps: [
           {
-            title: "Reach the entrance",
-            desc: "Welcome to Ivy Central Apartment! Head to the provided address. You will easily recognize the building main gate.",
-            alertType: "info",
-            alertText: "If arriving late at night, the porch is equipped with automatic illumination for your convenience.",
-            visualType: "image1"
-          },
-          {
-            title: "Locate the key safe box",
-            desc: "Look on the right side of the gate: right below the red solar spotlight you will find the key safe box highlighted in green.",
+            title: "Find the correct lockbox",
+            desc: "Look at the wall to the right of the main entrance. The key box is located right next to the sign.",
             alertType: "danger",
-            alertText: "CAUTION: Do not pull the red solar light. Only open the green-highlighted lockbox with the digit dials!",
-            visualType: "image2_annotated"
+            alertText: "CAUTION: DO NOT touch or pull the small solar light above the sign! It's just a courtesy light, not the key box.",
+            visualType: "image_both"
           },
           {
-            title: "Enter the code and take your keys",
-            desc: "Set the 4-digit code aligned along the center line, then pull down the side release lever to swing open the front panel and retrieve the keys.",
+            title: "Open the protective cover",
+            desc: "Slide down the black plastic cover with your thumb to reveal the 4 number dials.",
             alertType: "info",
-            alertText: "Once you have your keys, firmly shut the lockbox door.",
+            alertText: "Sliding down the black lid will expose the numeric dials and opening lever.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Align the 4-digit code",
+            desc: "Rotate the dials until your exact assigned code aligns with the central horizontal reference line.",
+            alertType: "info",
+            alertText: "Make sure each of the 4 digits is perfectly centered.",
             visualType: "code_display"
           },
           {
-            title: "Close and scramble dials",
-            desc: "It is mandatory to properly lock the safe box and thoroughly scramble all wheels so the code remains confidential.",
-            alertType: "danger",
-            alertText: "IMPORTANT: Always rotate all 4 wheels away from your secret code before heading inside!",
-            visualType: "scramble_notice"
+            title: "Press the lever and open",
+            desc: "Keeping the code aligned, push down the small black lever next to the numbers and pull the door towards you to retrieve the keys.",
+            alertType: "info",
+            alertText: "The key ring includes both the main gate key and your apartment key.",
+            visualType: "image_lever"
           },
           {
-            title: "Unlock the gate & enjoy your stay!",
-            desc: "Use the marked key to unlock the main door and step inside. You are officially home! Feel free to reach out if you need anything.",
+            title: "Close and scramble numbers",
+            desc: "Firmly close the metal door. Scramble the dials randomly for security and pull back up the black protective cover.",
             alertType: "info",
-            alertText: "Wi-Fi password and apartment guide are waiting for you inside on the living room table.",
+            alertText: "You are ready to enter! Welcome to Ivy Central Apartment.",
             visualType: "final_whatsapp"
           }
         ]
@@ -624,38 +624,38 @@
         whatsappText: "¡Hola! ¿Me puedes ayudar? Soy vuestro huésped.",
         steps: [
           {
-            title: "Llegada a la entrada",
-            desc: "¡Bienvenido a Ivy Central Apartment! Dirígete a la dirección indicada. Reconocerás la puerta principal del edificio.",
-            alertType: "info",
-            alertText: "Si llegas por la noche, la iluminación exterior se activa automáticamente para facilitarte el acceso.",
-            visualType: "image1"
-          },
-          {
-            title: "Localiza la caja de seguridad",
-            desc: "Mira a la derecha de la puerta: justo debajo de la luz solar roja encontrarás la caja de llaves resaltada en verde.",
+            title: "Encuentra la caja correcta",
+            desc: "Mira la pared a la derecha de la puerta principal. La caja de llaves está justo al lado del cartel.",
             alertType: "danger",
-            alertText: "ATENCIÓN: ¡No toques la luz solar roja! Abre solo la caja de seguridad marcada en verde con los diales.",
-            visualType: "image2_annotated"
+            alertText: "ATENCIÓN: ¡NO toques ni tires de la pequeña luz solar situada encima del cartel! Es solo una lámpara de cortesía, no la caja de llaves.",
+            visualType: "image_both"
           },
           {
-            title: "Introduce el código y toma las llaves",
-            desc: "Alinea las 4 cifras de tu combinación en la línea central y baja la palanca para abrir la tapa y coger las llaves.",
+            title: "Abre la tapa protectora",
+            desc: "Desliza hacia abajo con el pulgar la tapa negra de plástico para descubrir las 4 ruedas numéricas.",
             alertType: "info",
-            alertText: "Una vez recogidas las llaves, vuelve a cerrar bien la tapa de la caja.",
+            alertText: "Al deslizar la tapa negra encontrarás los diales numéricos y la palanca de apertura.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Alinea el código de 4 dígitos",
+            desc: "Gira las ruedas hasta componer exactamente tu código asignado en correspondencia con la línea de referencia horizontal.",
+            alertType: "info",
+            alertText: "Asegúrate de que cada uno de los 4 dígitos esté perfectamente centrado.",
             visualType: "code_display"
           },
           {
-            title: "Cierra y desordena los números",
-            desc: "Es imprescindible cerrar la caja y girar las ruedas al azar para que nadie pueda ver tu código de acceso.",
-            alertType: "danger",
-            alertText: "IMPORTANTE: ¡Gira siempre todos los números al azar antes de subir al apartamento!",
-            visualType: "scramble_notice"
+            title: "Pulsa la palanca y abre",
+            desc: "Manteniendo el código alineado, empuja hacia abajo la pequeña palanca negra junto a los números y tira de la puerta hacia ti.",
+            alertType: "info",
+            alertText: "En el llavero encontrarás tanto la llave de la puerta principal como la de tu apartamento.",
+            visualType: "image_lever"
           },
           {
-            title: "Abre la puerta y ¡feliz estancia!",
-            desc: "Usa la llave indicada para abrir la puerta principal y entrar. ¡Estás en tu casa! Estamos a tu disposición para cualquier duda.",
+            title: "Cierra y desordena los números",
+            desc: "Cierra bien la puerta metálica. Gira los rodillos al azar por seguridad y vuelve a subir la tapa protectora negra.",
             alertType: "info",
-            alertText: "La clave del Wi-Fi y las instrucciones del apartamento te esperan dentro, en la mesa del salón.",
+            alertText: "¡Estás listo para entrar! Bienvenido a Ivy Central Apartment.",
             visualType: "final_whatsapp"
           }
         ]
@@ -675,38 +675,38 @@
         whatsappText: "Bonjour ! Pouvez-vous m'aider ? Je suis votre invité.",
         steps: [
           {
-            title: "Arrivée devant l'entrée",
-            desc: "Bienvenue à Ivy Central Apartment ! Rendez-vous à l'adresse indiquée. Vous reconnaîtrez la grande porte d'entrée.",
-            alertType: "info",
-            alertText: "Si vous arrivez de nuit, l'éclairage extérieur est automatique pour vous faciliter l'accès.",
-            visualType: "image1"
-          },
-          {
-            title: "Repérez la boîte à clés sécurisée",
-            desc: "Regardez sur le côté droit du portail : sous la lumière solaire rouge se trouve la boîte à clés encadrée en vert.",
+            title: "Trouvez la bonne boîte à clés",
+            desc: "Regardez le mur à droite de la porte d'entrée. La petite boîte se trouve juste à côté de l'écriteau.",
             alertType: "danger",
-            alertText: "ATTENTION : Ne tirez pas sur la lampe solaire rouge ! Ouvrez uniquement la boîte à clés avec les chiffres.",
-            visualType: "image2_annotated"
+            alertText: "ATTENTION : NE touchez PAS et ne tirez PAS sur la petite lampe solaire au-dessus de l'écriteau ! C'est juste une veilleuse.",
+            visualType: "image_both"
           },
           {
-            title: "Entrez le code et prenez les clés",
-            desc: "Alignez les 4 chiffres sur la ligne centrale, puis abaissez le loquet latéral pour ouvrir et récupérer votre trousseau.",
+            title: "Ouvrez le volet de protection",
+            desc: "Faites glisser vers le bas avec votre pouce le clapet en plastique noir pour découvrir les 4 molettes chiffrées.",
             alertType: "info",
-            alertText: "Après avoir pris les clés, refermez soigneusement le clapet de la boîte.",
+            alertText: "En glissant le couvercle noir, vous trouverez les molettes numériques et le levier d'ouverture.",
+            visualType: "image_slider"
+          },
+          {
+            title: "Alignez le code à 4 chiffres",
+            desc: "Tournez les molettes pour composer exactement votre code attribué en face de la ligne de référence horizontale.",
+            alertType: "info",
+            alertText: "Assurez-vous que chacun des 4 chiffres est parfaitement centré.",
             visualType: "code_display"
           },
           {
-            title: "Refermez et brouillez la combinaison",
-            desc: "Il est indispensable de bien refermer la boîte et de tourner les molettes au hasard afin de dissimuler le code secret.",
-            alertType: "danger",
-            alertText: "IMPORTANT : Brouillez toujours les 4 chiffres avant de monter dans l'appartement !",
-            visualType: "scramble_notice"
+            title: "Appuyez sur le levier et ouvrez",
+            desc: "En gardant le code aligné, poussez vers le bas le petit levier noir à côté des chiffres et tirez la porte vers vous.",
+            alertType: "info",
+            alertText: "Le trousseau contient à la fois la clé de la porte principale et celle de votre appartement.",
+            visualType: "image_lever"
           },
           {
-            title: "Ouvrez la porte et bon séjour !",
-            desc: "Utilisez la clé marquée pour ouvrir la porte et entrer. Vous êtes chez vous ! Nous restons joignables en cas de besoin.",
+            title: "Refermez et brouillez les chiffres",
+            desc: "Refermez bien la porte métallique. Tournez les rouleaux au hasard par sécurité et remontez le volet de protection noir.",
             alertType: "info",
-            alertText: "Les identifiants Wi-Fi et les consignes du logement vous attendent sur la table du salon.",
+            alertText: "Vous êtes prêt à entrer ! Bienvenue à Ivy Central Apartment.",
             visualType: "final_whatsapp"
           }
         ]
@@ -817,20 +817,27 @@
       const container = document.getElementById('stepVisual');
       container.innerHTML = '';
 
-      if (step.visualType === 'image1') {
+      if (step.visualType === 'image_both') {
         container.innerHTML = `
           <div class="visual-box">
-            <img src="IMG-20260928-WA0010(1).jpg" alt="Ingresso">
-            <div class="step-img-overlay">Via Regina Margherita - Ingresso Principale</div>
+            <img src="IMG-20260928-WA0010(1).jpg" alt="Ingresso Principale">
+            <div class="step-img-overlay">Parete a destra del portone</div>
+          </div>
+          <div class="visual-box" style="position: relative;">
+            <img src="IMG-20260928-WA0012.jpg" alt="Dettaglio Targa e Cassetta">
+            <div class="annotation-box anno-solar">❌ LUCE</div>
+            <div class="annotation-box anno-keybox">✓ CHIAVI</div>
+            <div class="step-img-overlay">Dettaglio: Targa Ivy (sx) | Cassetta Chiavi (dx)</div>
           </div>
         `;
-      } else if (step.visualType === 'image2_annotated') {
+      } else if (step.visualType === 'image_slider') {
         container.innerHTML = `
-          <div class="visual-box" style="position: relative;">
-            <img src="IMG-20260928-WA0012.jpg" alt="Cassetta Chiavi">
-            <div class="annotation-box anno-solar">❌ NO</div>
-            <div class="annotation-box anno-keybox">✓ QUI</div>
-            <div class="step-img-overlay">Verde = Cassetta portachiavi corretta | Rosso = Faretto solare</div>
+          <div class="visual-box">
+            <div style="width: 100%; height: 220px; background: #e2e8f0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #475569;">
+              <span style="font-size: 42px; margin-bottom: 6px;">📥</span>
+              <span style="font-weight: 700; font-size: 15px;">Sportellino scorrevole</span>
+            </div>
+            <div class="step-img-overlay">Fai scorrere lo sportellino verso il basso ⬇️</div>
           </div>
         `;
       } else if (step.visualType === 'code_display') {
@@ -846,16 +853,14 @@
             </button>
           </div>
         `;
-      } else if (step.visualType === 'scramble_notice') {
+      } else if (step.visualType === 'image_lever') {
         container.innerHTML = `
-          <div class="code-display-card" style="border-color: #fca5a5; background: #fff5f5;">
-            <div style="font-size: 42px; margin-bottom: 6px;">🔄</div>
-            <div style="font-weight: 800; color: #b91c1c; font-size: 16px; margin-bottom: 4px;">
-              GIRA LE ROTELLE / SCRAMBLE DIALS
+          <div class="visual-box">
+            <div style="width: 100%; height: 220px; background: #cbd5e1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #1e293b;">
+              <span style="font-size: 42px; margin-bottom: 6px;">🔑</span>
+              <span style="font-weight: 700; font-size: 15px;">Levetta di apertura</span>
             </div>
-            <div style="font-size: 13px; color: #7f1d1d; line-height: 1.4;">
-              ${currentLanguage === 'it' ? 'Muovi tutti i numeri dopo aver estratto le chiavi.' : 'Rotate all wheels away from code before leaving the box.'}
-            </div>
+            <div class="step-img-overlay">Premi la levetta verso il basso e apri lo sportello</div>
           </div>
         `;
       } else if (step.visualType === 'final_whatsapp') {
