@@ -933,20 +933,13 @@
       modal.classList.remove('hidden');
     }
 
-    function closeSuccessModal() {
+function closeSuccessModal() {
       document.getElementById('completeModal').classList.add('hidden');
-      
-      // Apre una nuova pagina / scheda
-      // Puoi inserire qui l'URL che preferisci (es. la guida della casa, Google Maps, o una pagina di benvenuto)
-      const targetUrl = 'about:blank';
-      window.open(targetUrl, '_blank');
 
-      // Chiude la pagina corrente (se supportato dal browser) oppure mostra la schermata finale pulita
       try {
         window.close();
       } catch (e) {}
 
-      // Fallback per browser mobile che bloccano window.close(): sostituisce la schermata attuale
       document.querySelector('.app-container').innerHTML = `
         <div style="padding: 40px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
           <div style="font-size: 64px; margin-bottom: 20px;">✨ 🏠 ✨</div>
